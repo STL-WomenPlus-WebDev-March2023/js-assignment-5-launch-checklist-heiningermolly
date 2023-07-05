@@ -17,12 +17,42 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 function validateInput(testInput) {
-   
-}
+    if (testInput === "") {
+     return "Empty"
+    } else if (isNaN(testInput)) {
+     return "Not a Number"
+    } else if (!isNaN(testInput)) {
+     return "Is a Number"
+    }
+ }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   
-}
+    let form = document.getElementById("launchForm");
+    form.addEventListener("submit", function(event) {
+        let pilotInput = document.querySelector("input[name=pilotName");
+        alert(pilotInput);
+        let copilotInput = document.querySelector("input[name=copilotName");
+        let fuelLevelInput = document.querySelector("input[name=fuelLevel");
+        let cargoLevelInput = document.querySelector("input[name=cargoMass");
+        if (validateInput(pilotInput) === "Empty" || 
+        validateInput(copilotInput) === "Empty" ||
+        validateInput(fuelLevelInput) === "Empty" ||
+        validateInput(cargoLevelInput) === "Empty") {
+            alert("All fields are required!");
+            event.preventDefault();
+        };
+        if (validateInput(pilotInput) === "Is a Number" ||
+        validateInput(copilotInput) === "Is a Number") {
+            alert("Name Not Accepted! Text Only!");
+            event.preventDefault();
+        };
+        if (validateInput(fuelLevelInput) === "Not a Number" ||
+        validateInput(cargoLevelInput) === "Not a Number") {
+            alert("Value Not Accepted! Integers Only!");
+            event.preventDefault();
+        };
+    })
+};
 
 async function myFetch() {
     let planetsReturned;
