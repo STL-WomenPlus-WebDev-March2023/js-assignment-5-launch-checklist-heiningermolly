@@ -46,10 +46,17 @@ window.addEventListener("load", function() {
             document.getElementById("launchStatus").innerHTML = "Shuttle not ready to launch";
             document.getElementById("fuelStatus").innerHTML = "NOT ENOUGH FUEL FOR JOURNEY!!!!!"
         };
+        if (Number(cargoLevelInput.value) > 10000) {
+            document.getElementById("launchStatus").style = "color:red";
+            document.getElementById("launchStatus").innerHTML = "Shuttle not ready to launch";
+            document.getElementById("cargoStatus").innerHTML = "TOO HEAVY TO LAUNCH!!!!!"
+        };
         let faultyItems = document.getElementById("faultyItems");
         faultyItems.style = "visibility:visible";
         document.getElementById("pilotStatus").innerHTML += `: ${pilotInput.value}`;
         document.getElementById("copilotStatus").innerHTML += `: ${copilotInput.value}`;
+        document.getElementById("launchStatus").style = "color:green";
+        document.getElementById("launchStatus").innerHTML = "Shuttle is ready to launch";
 
         event.preventDefault();
         // };
