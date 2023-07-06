@@ -1,4 +1,4 @@
-// Write your JavaScript code here!
+
 
 function validateInput(testInput) {
     if (testInput === "") {
@@ -14,65 +14,25 @@ window.addEventListener("load", function() {
     let form = document.querySelector("form");
     form.addEventListener("submit", function(event) {
 
-        let pilotInput = document.querySelector("input[name=pilotName]");
-        let copilotInput = document.querySelector("input[name=copilotName]");
-        let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
-        let cargoLevelInput = document.querySelector("input[name=cargoMass]");
+        let pilot = document.querySelector("input[name=pilotName]");
+        let copilot = document.querySelector("input[name=copilotName]");
+        let fuelLevel = document.querySelector("input[name=fuelLevel]");
+        let cargoLevel = document.querySelector("input[name=cargoMass]");
+        let list = document.getElementById("faultyItems");
 
-        if (validateInput(pilotInput.value) === "Empty" || 
-        validateInput(copilotInput.value) === "Empty" ||
-        validateInput(fuelLevelInput.value) === "Empty" ||
-        validateInput(cargoLevelInput.value) === "Empty") {
-            alert("All fields are required!");
-            event.preventDefault();
-        }
-        else if (validateInput(pilotInput.value) === "Is a Number" ||
-        validateInput(copilotInput.value) === "Is a Number") {
-            alert("Name Not Accepted! Text Only!");
-            event.preventDefault();
-        }
-        else if (validateInput(fuelLevelInput.value) === "Not a Number") {
-            alert("Value Not Accepted! Fuel Level Must Be A Number!");
-            event.preventDefault();
-        }
-        else if (validateInput(cargoLevelInput.value) === "Not a Number") {
-            alert("Value Not Accepted! Cargo Mass Must Be A Number!");
-            event.preventDefault();
-        };
-        // else {
-
-        if (Number(fuelLevelInput.value) < 10000) {
-            document.getElementById("launchStatus").style = "color:red";
-            document.getElementById("launchStatus").innerHTML = "Shuttle not ready to launch";
-            document.getElementById("fuelStatus").innerHTML = "NOT ENOUGH FUEL FOR JOURNEY!!!!!"
-        };
-        if (Number(cargoLevelInput.value) > 10000) {
-            document.getElementById("launchStatus").style = "color:red";
-            document.getElementById("launchStatus").innerHTML = "Shuttle not ready to launch";
-            document.getElementById("cargoStatus").innerHTML = "TOO HEAVY TO LAUNCH!!!!!"
-        };
-        let faultyItems = document.getElementById("faultyItems");
-        faultyItems.style = "visibility:visible";
-        document.getElementById("pilotStatus").innerHTML += `: ${pilotInput.value}`;
-        document.getElementById("copilotStatus").innerHTML += `: ${copilotInput.value}`;
-        document.getElementById("launchStatus").style = "color:green";
-        document.getElementById("launchStatus").innerHTML = "Shuttle is ready to launch";
-
+        formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
         event.preventDefault();
-        // };
-    });
-    
-;
+});
+
 
    let listedPlanets;
-   // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-   let listedPlanetsResponse;
+
+   let listedPlanetsResponse = myFetch();
    listedPlanetsResponse.then(function (result) {
        listedPlanets = result;
-       console.log(listedPlanets);
    }).then(function () {
-       console.log(listedPlanets);
-       // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-   })
+       let luckyPlanet = pickPlanet(listedPlanets);
+       addDestinationInfo(document, luckyPlanet.name, luckyPlanet.diameter, luckyPlanet.star, luckyPlanet.distance, luckyPlanet.moons, luckyPlanet.image);
+    });
    
 });
