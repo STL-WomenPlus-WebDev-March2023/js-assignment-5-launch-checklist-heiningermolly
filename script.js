@@ -1,15 +1,3 @@
-
-
-function validateInput(testInput) {
-    if (testInput === "") {
-     return "Empty"
-    } else if (isNaN(testInput)) {
-     return "Not a Number"
-    } else if (!isNaN(testInput)) {
-     return "Is a Number"
-    }
- };
-
 window.addEventListener("load", function() {
     let form = document.querySelector("form");
     form.addEventListener("submit", function(event) {
