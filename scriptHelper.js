@@ -38,17 +38,11 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         // event.preventDefault();
     }
     else if (validateInput(pilot.value) === "Is a Number" ||
-    validateInput(copilot.value) === "Is a Number") {
-        alert("Name Not Accepted! Text Only!");
+    validateInput(copilot.value) === "Is a Number" ||
+    validateInput(fuelLevel.value) === "Not a Number" ||
+    validateInput(cargoLevel.value) === "Not a Number") {
+        alert("Make sure to enter valid information for each field!");
         // event.preventDefault();
-    }
-    else if (validateInput(fuelLevel.value) === "Not a Number") {
-        alert("Value Not Accepted! Fuel Level Must Be A Number!");
-        // event.preventDefault();
-    }
-    else if (validateInput(cargoLevel.value) === "Not a Number") {
-        alert("Value Not Accepted! Cargo Mass Must Be A Number!");
-        // event.preventDefault(); 
     }
     else {
 
