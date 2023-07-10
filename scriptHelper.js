@@ -29,20 +29,6 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
-
-    if (validateInput(pilot.value) === "Empty" || 
-    validateInput(copilot.value) === "Empty" ||
-    validateInput(fuelLevel.value) === "Empty" ||
-    validateInput(cargoLevel.value) === "Empty") {
-        window.alert("All fields are required!");
-    }
-    else if (validateInput(pilot.value) === "Is a Number" ||
-    validateInput(copilot.value) === "Is a Number" ||
-    validateInput(fuelLevel.value) === "Not a Number" ||
-    validateInput(cargoLevel.value) === "Not a Number") {
-        window.alert("Make sure to enter valid information for each field!");
-    }
-    else {
     list.style = "visibility:visible";
     document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot.value} is ready for launch`;
     document.getElementById("copilotStatus").innerHTML = `Co-pilot ${copilot.value} is ready for launch`;
@@ -69,7 +55,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         document.getElementById("cargoStatus").innerHTML = "Cargo mass low enough for launch";
     };
 }
-}
+
 
 
 
