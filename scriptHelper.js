@@ -34,18 +34,15 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     validateInput(copilot.value) === "Empty" ||
     validateInput(fuelLevel.value) === "Empty" ||
     validateInput(cargoLevel.value) === "Empty") {
-        alert("All fields are required!");
-        // event.preventDefault();
+        window.alert("All fields are required!");
     }
     else if (validateInput(pilot.value) === "Is a Number" ||
     validateInput(copilot.value) === "Is a Number" ||
     validateInput(fuelLevel.value) === "Not a Number" ||
     validateInput(cargoLevel.value) === "Not a Number") {
-        alert("Make sure to enter valid information for each field!");
-        // event.preventDefault();
+        window.alert("Make sure to enter valid information for each field!");
     }
     else {
-
     list.style = "visibility:visible";
     document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot.value} is ready for launch`;
     document.getElementById("copilotStatus").innerHTML = `Co-pilot ${copilot.value} is ready for launch`;
