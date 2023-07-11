@@ -29,6 +29,7 @@ function validateInput(testInput) {
             event.preventDefault();
      
         }
+
         else if (validateInput(pilot.value) === "Is a Number" ||
         validateInput(copilot.value) === "Is a Number" ||
         validateInput(fuelLevel.value) === "Not a Number" || 
@@ -37,11 +38,11 @@ function validateInput(testInput) {
             event.preventDefault();
      
         }
-        else {
-        formSubmission(window.document, list, pilot, copilot, fuelLevel, cargoLevel);
+
+        else {formSubmission(window.document, list, pilot, copilot, fuelLevel, cargoLevel);
         event.preventDefault();
- }
-});
+ }}
+);
  
  
  
