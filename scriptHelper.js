@@ -38,7 +38,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     validateInput(fuelLevel.value) === "Empty" ||
     validateInput(cargoLevel.value) === "Empty") {
         alert("All fields are required!");
-        event.preventDefault();
+        // event.preventDefault();
  
     }
 
@@ -47,7 +47,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     validateInput(fuelLevel.value) === "Not a Number" || 
     validateInput(cargoLevel.value) === "Not a Number" ){
         alert("Make sure to enter valid information for each field!");
-        event.preventDefault();
+        // event.preventDefault();
  
     }
 
@@ -57,7 +57,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
 
 
-   list.style = "visibility:visible";
+   list.style.visibility = "visible";
 
    document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot.value} is ready for launch`;
    document.getElementById("copilotStatus").innerHTML = `Co-pilot ${copilot.value} is ready for launch`;
