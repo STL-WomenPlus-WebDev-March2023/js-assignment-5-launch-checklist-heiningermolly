@@ -20,6 +20,7 @@ function validateInput(testInput) {
         let fuelLevel = document.querySelector("input[name=fuelLevel]");
         let cargoLevel = document.querySelector("input[name=cargoMass]");
         let list = document.getElementById("faultyItems");
+        list.style.visibility = "hidden";
         
 formSubmission(window.document, list, pilot, copilot, fuelLevel, cargoLevel);
         event.preventDefault();
