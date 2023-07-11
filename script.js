@@ -20,23 +20,9 @@ function validateInput(testInput) {
         let fuelLevel = document.querySelector("input[name=fuelLevel]");
         let cargoLevel = document.querySelector("input[name=cargoMass]");
         let list = document.getElementById("faultyItems");
+        list.style = "visibility:hidden";
 
-        if (validateInput(pilot.value) === "Empty" ||
-        validateInput(copilot.value) === "Empty" ||
-        validateInput(fuelLevel.value) === "Empty" ||
-        validateInput(cargoLevel.value) === "Empty") {
-            alert("All fields are required!");
-     
-        }
-        else if (validateInput(pilot.value) === "Is a Number" ||
-        validateInput(copilot.value) === "Is a Number" ||
-        validateInput(fuelLevel.value) === "Not a Number" || 
-        validateInput(cargoLevel.value) === "Not a Number" ){
-            alert("Make sure to enter valid information for each field!");
-        }
- 
- 
-        formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
+        formSubmission(window.document, list, pilot, copilot, fuelLevel, cargoLevel);
         event.preventDefault();
  });
  
