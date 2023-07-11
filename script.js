@@ -39,7 +39,7 @@ formSubmission(window.document, list, pilot, copilot, fuelLevel, cargoLevel);
    }).then(function () {
        let luckyPlanet = pickPlanet(listedPlanets);
        addDestinationInfo(document, luckyPlanet.name, luckyPlanet.diameter, luckyPlanet.star, luckyPlanet.distance, luckyPlanet.moons, luckyPlanet.image);
-    });
+    })
   
  });
  
