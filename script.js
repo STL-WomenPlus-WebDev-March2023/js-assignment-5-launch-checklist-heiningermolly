@@ -1,12 +1,12 @@
-function validateInput(testInput) {
-    if (testInput === "") {
-     return "Empty"
-    } else if (isNaN(testInput)) {
-     return "Not a Number"
-    } else if (!isNaN(testInput)) {
-     return "Is a Number"
-    }
- };
+// function validateInput(testInput) {
+//     if (testInput === "") {
+//      return "Empty"
+//     } else if (isNaN(testInput)) {
+//      return "Not a Number"
+//     } else if (!isNaN(testInput)) {
+//      return "Is a Number"
+//     }
+//  };
  
  
  window.addEventListener("load", function() {
@@ -20,7 +20,7 @@ function validateInput(testInput) {
         let fuelLevel = document.querySelector("input[name=fuelLevel]");
         let cargoLevel = document.querySelector("input[name=cargoMass]");
         let list = document.getElementById("faultyItems");
-        list.style.visibility = "hidden";
+        // list.style.visibility = "hidden";
         
 formSubmission(window.document, list, pilot, copilot, fuelLevel, cargoLevel);
         event.preventDefault();
