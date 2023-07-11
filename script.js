@@ -13,7 +13,7 @@
     let form = document.querySelector("form");
     
     form.addEventListener("submit", function(event) {
- 
+        event.preventDefault();
  
         let pilot = document.querySelector("input[name=pilotName]");
         let copilot = document.querySelector("input[name=copilotName]");
@@ -23,7 +23,7 @@
         // list.style.visibility = "hidden";
         
 formSubmission(window.document, list, pilot, copilot, fuelLevel, cargoLevel);
-        event.preventDefault();
+
  }
 );
  
