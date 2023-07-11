@@ -54,23 +54,19 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
 
    list.style = "visibility:visible";
+
    document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot.value} is ready for launch`;
    document.getElementById("copilotStatus").innerHTML = `Co-pilot ${copilot.value} is ready for launch`;
-   document.getElementById("launchStatus").style = "color:green";
-   document.getElementById("launchStatus").innerHTML = "Shuttle is Ready for Launch";
-
+   document.getElementById("fuelStatus").innerHTML = "Fuel level high enough for launch";
+   document.getElementById("cargoStatus").innerHTML = "Cargo mass low enough for launch";
+  document.getElementById("launchStatus").style = "color:green";
+  document.getElementById("launchStatus").innerHTML = "Shuttle is Ready for Launch";
 
    if (Number(fuelLevel.value) < 10000) {
        document.getElementById("launchStatus").style = "color:red";
        document.getElementById("launchStatus").innerHTML = "Shuttle Not Ready for Launch";
        document.getElementById("fuelStatus").innerHTML = "Fuel level too low for launch"
    };
-
-
-   if (Number(fuelLevel.value) >= 10000) {
-       document.getElementById("fuelStatus").innerHTML = "Fuel level high enough for launch";
-   };
-
 
    if (Number(cargoLevel.value) > 10000) {
        document.getElementById("launchStatus").style = "color:red";
@@ -79,10 +75,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    };
 
 
-   if (Number(cargoLevel.value) <= 10000) {
-       document.getElementById("cargoStatus").innerHTML = "Cargo mass low enough for launch";
-   };
-}
+
+   }
 }
 
 
