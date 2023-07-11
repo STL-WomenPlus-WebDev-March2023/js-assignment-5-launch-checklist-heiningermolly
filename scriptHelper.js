@@ -44,9 +44,9 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
    }
    else if (validateInput(pilot.value) === "Is a Number" ||
-   validateInput(copilot.value) === "Is a Number") || 
+   validateInput(copilot.value) === "Is a Number" ||
    validateInput(fuelLevel.value) === "Not a Number" || 
-   validateInput(cargoLevel.value) === "Not a Number" {
+   validateInput(cargoLevel.value) === "Not a Number" ){
        alert("Make sure to enter valid information for each field!");
 
    }
