@@ -33,6 +33,7 @@ function validateInput(testInput) {
         validateInput(fuelLevel.value) === "Not a Number" || 
         validateInput(cargoLevel.value) === "Not a Number" ){
             alert("Make sure to enter valid information for each field!");
+        }
  
  
         formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
